@@ -31,8 +31,8 @@ or
       'AsyncThread.AsyncThread' => array('engine' => 'path_to_custom_engine')
     );
 
-Then in your model you can use methods like asyncMethodName(arg1, arg2, ...)
-and it asynchronously call methodName(arg1, arg2, ...).
+Then in your model you can use methods like `asyncMethodName(arg1, arg2, ...)`
+and it asynchronously call `methodName(arg1, arg2, ...)`.
 
 ##WARNING
 
