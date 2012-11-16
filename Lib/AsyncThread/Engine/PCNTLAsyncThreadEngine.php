@@ -37,4 +37,8 @@ class PCNTLAsyncThreadEngine implements AsyncThreadEngineInterface {
         return !$this->_isParent();
     }
 
+    public function __destruct() {
+        posix_kill($this->_pid, SIGKILL);
+    }
+
 }

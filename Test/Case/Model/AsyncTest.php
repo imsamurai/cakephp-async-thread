@@ -26,4 +26,9 @@ class AsyncTest extends CakeTestCase {
         $this->assertSame('321', $this->Model->readData());
     }
 
+    public function testAsyncMethod2() {
+        $this->Model->asyncDoSomething('4444');
+        $this->assertSame('4444', $this->Model->readData());
+    }
+
 }
