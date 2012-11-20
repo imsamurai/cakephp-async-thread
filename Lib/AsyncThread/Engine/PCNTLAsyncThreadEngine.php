@@ -38,7 +38,9 @@ class PCNTLAsyncThreadEngine implements AsyncThreadEngineInterface {
     }
 
     public function __destruct() {
-        posix_kill($this->_pid, SIGKILL);
+        if (php_sapi_name() === 'cli') {
+            posix_kill($this->_pid, SIGKILL);
+        }
     }
 
 }

@@ -8,6 +8,7 @@
 
 App::uses('AsyncThreadAppModel', 'AsyncThread.Model');
 App::uses('AsyncThreadBehavior', 'AsyncThread.Model/Behavior');
+App::uses('File', 'Utility');
 
 class Async extends AsyncThreadAppModel {
     public $name = 'Async';
@@ -18,7 +19,7 @@ class Async extends AsyncThreadAppModel {
 
     public function __construct($id = false, $table = null, $ds = null) {
         parent::__construct($id, $table, $ds);
-        $this->_dataPath = APP . 'Plugin' . DS . 'AsyncThread' . DS . 'Test' . DS . 'Data' . DS . 'async_result.php';
+        $this->_dataPath = dirname(dirname(__FILE__)) . DS . 'Test' . DS . 'Data' . DS . 'async_result.php';
     }
 
     public function doSomething($data) {
